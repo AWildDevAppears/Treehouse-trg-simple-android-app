@@ -7,9 +7,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.Random;
 
 public class FunFactsActivity extends AppCompatActivity {
+
+
+    private String[] funFacts = {
+            "fact one",
+            "fact two",
+            "fact three",
+            "fact four",
+            "fact five",
+            "fact six",
+            "fact seven",
+            "fact eight",
+            "fact nine",
+            "fact ten"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +40,13 @@ public class FunFactsActivity extends AppCompatActivity {
                 String fact = "";
 
                 Random randomGen = new Random();
-                int randomNumber = randomGen.nextInt(11);
+                int randomNumber = randomGen.nextInt(10);
 
+                if (randomNumber <= funFacts.length) {
+                    fact = funFacts[randomNumber];
+                } else {
+                    fact = "Something is broken";
+                }
 
                 factLabel.setText(fact);
             }
