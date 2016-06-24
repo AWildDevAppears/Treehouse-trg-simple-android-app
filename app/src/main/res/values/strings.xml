@@ -1,2 +1,5 @@
 <resources>
+    <string name="app_name">Fun Facts</string>
+    <string name="app_heading">Did you Know?</string>
+    <string name="next_fact">Show another fun fact</string>
 </resources>
