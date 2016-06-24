@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.Random;
@@ -25,7 +26,6 @@ public class FunFactsActivity extends AppCompatActivity {
         final RelativeLayout pageBackPane = (RelativeLayout) findViewById(R.id.backPane);
         final Button showFactButton = (Button) findViewById(R.id.showFactButton);
 
-
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,5 +40,9 @@ public class FunFactsActivity extends AppCompatActivity {
         };
 
         showFactButton.setOnClickListener(listener);
+
+        Toast
+            .makeText(this, "Ping goes the toast", Toast.LENGTH_LONG)
+            .show();
     }
 }
