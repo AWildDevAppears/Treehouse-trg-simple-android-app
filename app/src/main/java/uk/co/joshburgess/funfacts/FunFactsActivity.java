@@ -20,7 +20,7 @@ public class FunFactsActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fact = "A fact goes here";
+                String fact = "";
 
                 factLabel.setText(fact);
             }
