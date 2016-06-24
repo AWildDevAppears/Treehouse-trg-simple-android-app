@@ -40,13 +40,9 @@ public class FunFactsActivity extends AppCompatActivity {
                 String fact = "";
 
                 Random randomGen = new Random();
-                int randomNumber = randomGen.nextInt(10);
+                int randomNumber = randomGen.nextInt(funFacts.length);
 
-                if (randomNumber <= funFacts.length) {
-                    fact = funFacts[randomNumber];
-                } else {
-                    fact = "Something is broken";
-                }
+                fact = funFacts[randomNumber];
 
                 factLabel.setText(fact);
             }
