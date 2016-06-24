@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:text="@string/app_heading"
         android:textSize="24sp"
+        android:textColor="@color/transpColorWhite"
         />
 
 
@@ -32,7 +33,7 @@
         android:text="@string/next_fact"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
+        android:background="@color/colorWhite"
         />
 
 </RelativeLayout>
