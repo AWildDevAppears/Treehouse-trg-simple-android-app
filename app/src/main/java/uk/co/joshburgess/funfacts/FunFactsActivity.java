@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class FunFactsActivity extends AppCompatActivity {
 
     @Override
@@ -21,6 +23,10 @@ public class FunFactsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String fact = "";
+
+                Random randomGen = new Random();
+                int randomNumber = randomGen.nextInt(11);
+
 
                 factLabel.setText(fact);
             }
