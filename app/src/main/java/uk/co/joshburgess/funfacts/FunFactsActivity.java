@@ -11,20 +11,7 @@ import java.lang.reflect.Array;
 import java.util.Random;
 
 public class FunFactsActivity extends AppCompatActivity {
-
-
-    private String[] funFacts = {
-            "fact one",
-            "fact two",
-            "fact three",
-            "fact four",
-            "fact five",
-            "fact six",
-            "fact seven",
-            "fact eight",
-            "fact nine",
-            "fact ten"
-    };
+    private FactBook mFactBook = new FactBook();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +24,7 @@ public class FunFactsActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fact = "";
-
-                Random randomGen = new Random();
-                int randomNumber = randomGen.nextInt(funFacts.length);
-
-                fact = funFacts[randomNumber];
+                String fact = mFactBook.GetFact();
 
                 factLabel.setText(fact);
             }
