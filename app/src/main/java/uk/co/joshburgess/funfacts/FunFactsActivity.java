@@ -22,14 +22,18 @@ public class FunFactsActivity extends AppCompatActivity {
     private String mFact;
     private int mColor;
 
+    private TextView mFactLabel;
+    private RelativeLayout mRelativeLayout;
+    private Button mShowFactButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fun_facts);
 
-        final TextView factLabel = (TextView) findViewById(R.id.funFactTextView);
-        final RelativeLayout pageBackPane = (RelativeLayout) findViewById(R.id.backPane);
-        final Button showFactButton = (Button) findViewById(R.id.showFactButton);
+        mFactLabel = (TextView) findViewById(R.id.funFactTextView);
+        mRelativeLayout = (RelativeLayout) findViewById(R.id.backPane);
+        mShowFactButton = (Button) findViewById(R.id.showFactButton);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -37,13 +41,13 @@ public class FunFactsActivity extends AppCompatActivity {
                 mFact = mFactBook.GetFact();
                 mColor = mColorWheel.GetColor();
 
-                factLabel.setText(mFact);
-                pageBackPane.setBackgroundColor(mColor);
-                showFactButton.setTextColor(mColor);
+                mFactLabel.setText(mFact);
+                mRelativeLayout.setBackgroundColor(mColor);
+                mShowFactButton.setTextColor(mColor);
             }
         };
 
-        showFactButton.setOnClickListener(listener);
+        mShowFactButton.setOnClickListener(listener);
 
         Toast
             .makeText(this, "Ping goes the toast", Toast.LENGTH_LONG)
