@@ -14,6 +14,8 @@ import java.lang.reflect.Array;
 import java.util.Random;
 
 public class FunFactsActivity extends AppCompatActivity {
+    public static final String TAG = FunFactsActivity.class.getSimpleName();
+
     private FactBook mFactBook = new FactBook();
     private ColorWheel mColorWheel = new ColorWheel();
 
