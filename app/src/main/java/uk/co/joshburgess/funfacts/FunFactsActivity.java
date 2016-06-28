@@ -15,12 +15,14 @@ import java.util.Random;
 
 public class FunFactsActivity extends AppCompatActivity {
     public static final String TAG = FunFactsActivity.class.getSimpleName();
+
     private static final String KEY_FACT = "KEY_FACT";
+    private static final String KEY_COLOR = "KEY_COLOR";
 
     private FactBook mFactBook = new FactBook();
     private ColorWheel mColorWheel = new ColorWheel();
-    private String mFact;
-    private int mColor;
+    private String mFact = mFactBook.mFunFacts[0];
+    private int mColor = Color.parseColor(mColorWheel.mColors[8]);
 
     private TextView mFactLabel;
     private RelativeLayout mRelativeLayout;
@@ -59,6 +61,20 @@ public class FunFactsActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         outState.putString(KEY_FACT, mFact);
-        outState.putInt(KEY_FACT, mColor);
+        outState.putInt(KEY_COLOR, mColor);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        mFact = savedInstanceState.getString(KEY_FACT);
+        mColor = savedInstanceState.getInt(KEY_COLOR);
+
+        mFactLabel.setText(mFact);
+
+        mRelativeLayout.setBackgroundColor(mColor);
+        mShowFactButton.setTextColor(mColor);
     }
 }

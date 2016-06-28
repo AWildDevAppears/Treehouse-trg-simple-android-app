@@ -6,7 +6,7 @@ import java.util.Random;
  * Created by joshburgess on 24/06/2016.
  */
 public class FactBook {
-    private String[] mFunFacts = {
+    public String[] mFunFacts = {
             "fact one",
             "fact two",
             "fact three",
