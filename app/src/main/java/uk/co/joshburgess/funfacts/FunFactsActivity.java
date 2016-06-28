@@ -15,9 +15,12 @@ import java.util.Random;
 
 public class FunFactsActivity extends AppCompatActivity {
     public static final String TAG = FunFactsActivity.class.getSimpleName();
+    private static final String KEY_FACT = "KEY_FACT";
 
     private FactBook mFactBook = new FactBook();
     private ColorWheel mColorWheel = new ColorWheel();
+    private String mFact;
+    private int mColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +34,12 @@ public class FunFactsActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fact = mFactBook.GetFact();
-                int color = mColorWheel.GetColor();
+                mFact = mFactBook.GetFact();
+                mColor = mColorWheel.GetColor();
 
-                factLabel.setText(fact);
-                pageBackPane.setBackgroundColor(color);
-                showFactButton.setTextColor(color);
-
+                factLabel.setText(mFact);
+                pageBackPane.setBackgroundColor(mColor);
+                showFactButton.setTextColor(mColor);
             }
         };
 
@@ -46,5 +48,13 @@ public class FunFactsActivity extends AppCompatActivity {
         Toast
             .makeText(this, "Ping goes the toast", Toast.LENGTH_LONG)
             .show();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString(KEY_FACT, mFact);
+        outState.putInt(KEY_FACT, mColor);
     }
 }
